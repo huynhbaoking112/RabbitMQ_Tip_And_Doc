@@ -56,4 +56,7 @@
 
         🍒 Fair dispatch: Một điểm vô cùng quan trọng trong phân phối message cho các consumer là nó chỉ phân phối giống dạng chẳn lẽ tức là consumer1 nhận message 1 consumer 2 nhận message 2 chứ không dựa vào mức độ xử lí lâu của consumer. Để giải quyết vấn đề này ta sử dụng phương thức prefect có giá trị 1. Điều này yêu cầu RabbitMQ không gửi nhiều tin nhắn cho một nhân viên cùng một lúc. Hay nói cách khác không gửi tin nhắn mới cho một nhân viên cho đến khi nó xử lý và xác nhận tin nhắn trước đó. Thay vào đó nó sẽ gửi nó cho nhân viên tiếp theo không còn bận.
 
+             => channel.prefetch(1);
+
+        
 
